@@ -1,0 +1,15 @@
+resources:
+  - ../../base
+namespace: kakakakakku-dev
+namePrefix: kakakakakku-dev-
+commonLabels:
+  app: kakakakakku-dev
+replicas:
+- name: kakakakakku-dev-nginx
+  count: 5
+images:
+  - name: nginx
+    newName: nginx
+    newTag: 1.21-alpine
+patchesStrategicMerge:
+  - deployment.yaml
